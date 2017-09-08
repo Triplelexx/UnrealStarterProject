@@ -1,0 +1,77 @@
+{
+  "build": {
+    "tasks_filename": "Game/spatialos.unreal.worker.build.json"
+  },
+  "bridge": {
+    "worker_attribute_set": {
+      "attributes": [
+        "UnrealWorker"
+      ]
+    },
+    "entity_interest": {
+      "range_entity_interest": {
+        "radius": 2
+      }
+    },
+    "streaming_query": [],
+    "component_delivery": {
+      "default": "RELIABLE_ORDERED",
+      "checkout_all_initially": true
+    }
+  },
+  "managed": {
+    "windows": {
+      "artifact_name": "UnrealWorker@Windows.zip",
+      "command": "StarterProject/Binaries/Win64/StarterProjectServer.exe",
+      "arguments": [
+        "+appName",
+        "${IMPROBABLE_PROJECT_NAME}",
+        "+receptionistIp",
+        "${IMPROBABLE_RECEPTIONIST_HOST}",
+        "+receptionistPort",
+        "${IMPROBABLE_RECEPTIONIST_PORT}",
+        "+workerType",
+        "${IMPROBABLE_WORKER_NAME}",
+        "+workerId",
+        "${IMPROBABLE_WORKER_ID}",
+        "+linkProtocol",
+        "RakNet",
+        "log=${IMPROBABLE_LOG_FILE}"
+      ]
+    },
+    "linux": {
+      "artifact_name": "UnrealWorker@Linux.zip",
+      "command": "StartServer.sh",
+      "arguments": [
+        "StarterProjectServer",
+        "+appName",
+        "${IMPROBABLE_PROJECT_NAME}",
+        "+receptionistIp",
+        "${IMPROBABLE_RECEPTIONIST_HOST}",
+        "+receptionistPort",
+        "${IMPROBABLE_RECEPTIONIST_PORT}",
+        "+workerType",
+        "${IMPROBABLE_WORKER_NAME}",
+        "+workerId",
+        "${IMPROBABLE_WORKER_ID}",
+        "+linkProtocol",
+        "RakNet",
+        "log=${IMPROBABLE_LOG_FILE}"
+      ]
+    }
+  },
+  "external": {
+    "default": {
+      "run_type": "EXECUTABLE_ZIP",
+      "windows": {
+        "artifact_name": "UnrealWorker@Windows.zip",
+        "command": "StarterProject/Binaries/Win64/StarterProjectServer.exe",
+        "arguments": [
+          "+workerType",
+          "UnrealWorker",
+          "log=unrealWorker.log"
+        ]
+      }
+    }
+  }
+}
