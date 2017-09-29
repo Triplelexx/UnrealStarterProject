@@ -2,7 +2,7 @@
 #pragma once
 
 #include "EntityId.h"
-#include "Improbable/Generated/cpp/unreal/EntityTemplate.h"
+#include "EntityTemplate.h"
 #include "SpatialOS.h"
 #include "StarterProjectGameMode.generated.h"
 

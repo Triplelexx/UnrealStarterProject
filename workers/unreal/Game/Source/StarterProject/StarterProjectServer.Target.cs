@@ -5,21 +5,9 @@ using System.Collections.Generic;
 
 public class StarterProjectServerTarget : TargetRules
 {
-	public StarterProjectServerTarget(TargetInfo Target)
+	public StarterProjectServerTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Server;
-	}
-
-	//
-	// TargetRules interface.
-	//
-
-	public override void SetupBinaries(
-		TargetInfo Target,
-		ref List<UEBuildBinaryConfiguration> OutBuildBinaryConfigurations,
-		ref List<string> OutExtraModuleNames
-		)
-	{
-		OutExtraModuleNames.AddRange(new [] { "StarterProject" });
+		ExtraModuleNames.AddRange(new [] { "StarterProject" });
 	}
 }

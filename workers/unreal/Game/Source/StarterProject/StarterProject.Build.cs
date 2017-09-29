@@ -7,12 +7,8 @@ using System.IO;
 
 public class StarterProject : ModuleRules
 {
-	public StarterProject(TargetInfo Target)
+	public StarterProject(ReadOnlyTargetRules Target) : base(Target)
 	{
-        var SpatialOS = new SpatialOSModule(this, Target, this.GetType().Name);
-		SpatialOS.SetupSpatialOS();
-		SpatialOS.GenerateCode();
-
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "SpatialOS" });
 	}
 }

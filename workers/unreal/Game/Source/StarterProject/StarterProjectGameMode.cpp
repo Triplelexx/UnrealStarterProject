@@ -2,6 +2,7 @@
 
 #include "StarterProject.h"
 #include "EntityBuilder.h"
+#include "EntityRegistry.h"
 #include "StarterProjectGameInstance.h"
 #include "StarterProjectGameMode.h"
 #include "SpatialOSConversionFunctionLibrary.h"
@@ -9,7 +10,7 @@
 #include "WorkerConnection.h"
 #include "improbable/standard_library.h"
 #include <improbable/player/heartbeat.h>
-#include "Improbable/Generated/cpp/unreal/Commander.h"
+#include "Commander.h"
 
 #define ENTITY_BLUEPRINTS_FOLDER "/Game/EntityBlueprints"
 
@@ -149,7 +150,7 @@ void AStarterProjectGameMode::StartPlay()
             this, &AStarterProjectGameMode::OnSpatialOsFailedToConnect);
         SpatialOS->OnDisconnectedDelegate.AddDynamic(this,
                                                      &AStarterProjectGameMode::OnSpatialOsDisconnected);
-        UE_LOG(LogSpatialOS, Display, TEXT("Startplay called to SpatialOS"))
+        UE_LOG(LogStarterProject, Display, TEXT("Startplay called to SpatialOS"))
 
         auto workerConfig = FSOSWorkerConfigurationData();
 

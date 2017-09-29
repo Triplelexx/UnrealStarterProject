@@ -4,9 +4,8 @@
 
 #include "StarterProjectGameInstance.h"
 #include "EntityRegistry.h"
-#include "Improbable/Generated/cpp/unreal/EntityPipeline.h"
+#include "EntityPipeline.h"
 #include "SimpleEntitySpawnerBlock.h"
-#include "SpatialOS.h"
 
 #define ENTITY_BLUEPRINTS_FOLDER "/Game/EntityBlueprints"
 
