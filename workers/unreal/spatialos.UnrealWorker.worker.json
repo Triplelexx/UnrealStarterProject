@@ -75,7 +75,7 @@
       "windows": {
         "command": "${UNREAL_HOME}\\Engine\\Binaries\\Win64\\UE4Editor.exe",
         "arguments": [
-          "${IMPROBABLE_WORKER_DIR}/Game/<PROJECT_NAME>.uproject",
+          "${IMPROBABLE_WORKER_DIR}/Game/StarterProject.uproject",
           "-server",
           "-stdout",
           "-nowrite",
